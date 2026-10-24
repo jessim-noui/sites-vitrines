@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Boulangerie du Quai | Boulangerie Artisanale & Orientale</title>
+    <meta name="description" content="Levain naturel, miels rares et pâtisseries orientales - Une expérience sensorielle au cœur de Paris.">
+    
+    <!-- Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Dancing+Script:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash">
+        <div class="splash-logo">
+            <h1>La Boulangerie du Quai</h1>
+            <p class="splash-subtitle">Artisan & Oriental</p>
+        </div>
+    </div>
+
+    <!-- Texture de fond -->
+    <div class="moucharabieh-pattern"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span>La Boulangerie du Quai</span>
+                <span class="logo-subtitle">Artisan & Oriental</span>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#histoire" class="nav-link">Notre Histoire</a></li>
+                <li><a href="#programme" class="nav-link">Les Saveurs</a></li>
+                <li><a href="#galerie" class="nav-link">Notre Atelier</a></li>
+                <li><a href="#devis-contact" class="nav-link">Devis & Contact</a></li>
+            </ul>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="img/fond.svg" 
+                 alt="Atelier de boulangerie La Boulangerie du Quai" 
+                 loading="eager">
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">L'Artisanat au Coeur de l'Orient</h1>
+            <p class="hero-subtitle">Levain naturel & saveurs d'exception</p>
+            <p class="poetic-phrase">Le croquant du levain, le parfum du lointain</p>
+        </div>
+    </section>
+
+    <!-- Histoire -->
+    <section id="histoire" class="histoire-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Notre histoire</h2>
+                <p class="section-subtitle">Une rencontre, une passion partagée</p>
+            </div>
+            
+            <div class="histoire-content">
+                <div class="histoire-text">
+                    <p>
+                        En 2014, deux passionnés, l’un du levain naturel, l’autre des miels rares, créent La Boulangerie du Quai. Leur vision : marier la tradition française avec les saveurs orientales.
+                    </p>
+                    <p>
+                        Notre levain mère, cultivé depuis le premier jour, donne vie à chaque création. Chaque pain, chaque pâtisserie naît de cette alchimie unique entre patience et savoir-faire.
+                    </p>
+                    <p class="poetic-phrase">« Là où le blé rencontre le miel, naît la douceur »</p>
+                </div>
+                
+                <div class="histoire-image">
+                    <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=80" 
+                         alt="Les fondateurs" 
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programme avec système d'ouverture -->
+    <section id="programme" class="programme-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Notre Programme</h2>
+                <p class="poetic-phrase">Trois univers, une seule passion</p>
+            </div>
+        </div>
+        
+        <div class="programme-container">
+            
+            <!-- Pilier Salé -->
+            <div class="programme-pillar" onclick="expandProgramme(this)">
+                <div class="programme-bg" style="background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&q=80');"></div>
+                <div class="programme-title">
+                    <p class="programme-category">CATÉGORIE</p>
+                    <h2>Le Salé</h2>
+                </div>
+                <div class="back-btn">Retour</div>
+                <div class="produits-reveal">
+                    <div class="produit-item-modal" onclick="openProduitModal('pain-campagne')">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80">
+                        <h4>Pain Campagne</h4>
+                        <div class="prix">7,50 €</div>
+                    </div>
+                    <div class="produit-item-modal" onclick="openProduitModal('pain-noix')">
+                        <img src="https://images.unsplash.com/photo-1587652810475-8f4d4247c4c5?auto=format&fit=crop&w=600&q=80">
+                        <h4>Pain aux Noix</h4>
+                        <div class="prix">8,90 €</div>
+                    </div>
+                    <div class="produit-item-modal" onclick="openProduitModal('pizza')">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80">
+                        <h4>Pizza Artisanale</h4>
+                        <div class="prix">12,50 €</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pilier Sucré -->
+            <div class="programme-pillar" onclick="expandProgramme(this)">
+                <div class="programme-bg" style="background-image: url('https://images.unsplash.com/photo-1558326567-98ae2405596b?auto=format&fit=crop&w=1600&q=80');"></div>
+                <div class="programme-title">
+                    <p class="programme-category">CATÉGORIE</p>
+                    <h2>Le Sucré</h2>
+                </div>
+                <div class="back-btn">Retour</div>
+                <div class="produits-reveal">
+                    <div class="produit-item-modal" onclick="openProduitModal('croissant')">
+                        <img src="https://images.unsplash.com/photo-1558326567-98ae2405596b?auto=format&fit=crop&w=600&q=80">
+                        <h4>Croissant au Beurre</h4>
+                        <div class="prix">2,80 €</div>
+                    </div>
+                    <div class="produit-item-modal" onclick="openProduitModal('cornes-gazelle')">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80">
+                        <h4>Cornes de Gazelle</h4>
+                        <div class="prix">3,80 €</div>
+                    </div>
+                    <div class="produit-item-modal" onclick="openProduitModal('eclair')">
+                        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80">
+                        <h4>Éclair au Chocolat</h4>
+                        <div class="prix">4,20 €</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pilier Épicerie -->
+            <div class="programme-pillar" onclick="expandProgramme(this)">
+                <div class="programme-bg" style="background-image: url('https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=1600&q=80');"></div>
+                <div class="programme-title">
+                    <p class="programme-category">CATÉGORIE</p>
+                    <h2>L'Épicerie</h2>
+                </div>
+                <div class="back-btn">Retour</div>
+                <div class="produits-reveal">
+                    <div class="produit-item-modal" onclick="openProduitModal('miel-thym')">
+                        <img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=600&q=80">
+                        <h4>Miel de Thym</h4>
+                        <div class="prix">14,50 €</div>
+                    </div>
+                    <div class="produit-item-modal" onclick="openProduitModal('ras-el-hanout')">
+                        <img src="https://images.unsplash.com/photo-1533050487297-09b450131914?auto=format&fit=crop&w=600&q=80">
+                        <h4>Ras el Hanout</h4>
+                        <div class="prix">8,90 €</div>
+                    </div>
+                    <div class="produit-item-modal" onclick="openProduitModal('confiture')">
+                        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80">
+                        <h4>Confiture Abricot</h4>
+                        <div class="prix">6,50 €</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bouton Voir Menu Complet -->
+        <div class="menu-complet-btn">
+            <button class="btn-menu" onclick="openMenuModal()">
+                Voir le menu complet
+                <span>→</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Galerie Photos -->
+    <section id="galerie" class="galerie-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Notre atelier en images</h2>
+                <p class="section-subtitle">Cliquez sur une image pour l'agrandir</p>
+            </div>
+            
+            <div class="galerie-grid">
+                <div class="galerie-item" onclick="openGalerieModal('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" 
+                         alt="Pain au levain" 
+                         loading="lazy">
+                </div>
+                
+                <div class="galerie-item" onclick="openGalerieModal('https://images.unsplash.com/photo-1558326567-98ae2405596b?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1558326567-98ae2405596b?auto=format&fit=crop&w=600&q=80" 
+                         alt="Pâtisseries orientales" 
+                         loading="lazy">
+                </div>
+                
+                <div class="galerie-item" onclick="openGalerieModal('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80" 
+                         alt="Briouates" 
+                         loading="lazy">
+                </div>
+                
+                <div class="galerie-item" onclick="openGalerieModal('https://images.unsplash.com/photo-1514516345957-5b3d2f5d249e?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1514516345957-5b3d2f5d249e?auto=format&fit=crop&w=600&q=80" 
+                         alt="Chebakia" 
+                         loading="lazy">
+                </div>
+                
+                <div class="galerie-item" onclick="openGalerieModal('https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=600&q=80" 
+                         alt="Miel artisanal" 
+                         loading="lazy">
+                </div>
+                
+                <div class="galerie-item" onclick="openGalerieModal('https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=600&q=80" 
+                         alt="Pain de semoule" 
+                         loading="lazy">
+                </div>
+                
+                <div class="galerie-item" onclick="openGalerieModal('https://images.unsplash.com/photo-1601922047785-e34e2b5c7b3f?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1601922047785-e34e2b5c7b3f?auto=format&fit=crop&w=600&q=80" 
+                         alt="Atelier boulangerie" 
+                         loading="lazy">
+                </div>
+                
+                <div class="galerie-item" onclick="openGalerieModal('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=600&q=80" 
+                         alt="Préparation" 
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Devis et Contact simplifié -->
+    <section id="devis-contact" class="devis-contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Devis & Contact</h2>
+                <p class="section-subtitle">Pour vos événements ou pour nous rendre visite</p>
+            </div>
+            
+            <div class="devis-contact-grid">
+                <!-- Formulaire de devis simplifié -->
+                <div class="devis-box">
+                    <h3>Demande de devis</h3>
+                    <form id="formDevis">
+                        <div class="form-group">
+                            <label for="nom">Nom complet *</label>
+                            <input type="text" id="nom" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" class="form-control" placeholder="Décrivez votre projet, vos besoins, la date..." rows="4" required></textarea>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: var(--space-lg);">
+                            <button type="submit" class="btn btn-primary">Envoyer la demande</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Horaires et contact -->
+                <div class="contact-box">
+                    <h3>Nos horaires</h3>
+                    
+                   <div class="hours-grid">
+    <div class="hour-row">
+        <span class="hour-day">Mardi – Vendredi</span>
+        <span class="hour-time">8h – 20h</span>
+    </div>
+    <div class="hour-row">
+        <span class="hour-day">Samedi</span>
+        <span class="hour-time">8h – 21h</span>
+    </div>
+    <div class="hour-row">
+        <span class="hour-day">Dimanche</span>
+        <span class="hour-time">8h – 14h</span>
+    </div>
+    <div class="hour-row">
+        <span class="hour-day">Lundi</span>
+        <span class="hour-time">Fermé</span>
+    </div>
+</div>
+
+                    
+                        <p style="margin-top: var(--space-md); font-style: italic; color: var(--orange-miel);">
+                            Pour les commandes volumineuses, merci de nous contacter au moins 72h à l'avance.
+                        </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">La Boulangerie du Quai</div>
+                <p class="footer-slogan">Levain naturel et miels d'exception.</p>
+                <p style="font-size: 0.85rem; opacity: 0.9; line-height: 1.5; color: #FDF8F1;">
+    Artisan boulanger depuis 2014, nous perpétuons la tradition tout en innovant avec les saveurs d'Orient.
+</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="#histoire">Notre Histoire</a></li>
+                    <li><a href="#programme">Les Saveurs</a></li>
+                    <li><a href="#galerie">Notre Atelier</a></li>
+                    <li><a href="#devis-contact">Devis & Contact</a></li>
+                    <li><a href="#" onclick="openMenuModal(); return false;">Menu Complet</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li>📍 1 rue de l'Exemple, 00000 Ville Exemple</li>
+                    <li>📞 01 23 45 67 89</li>
+                    <li>📧 contact@example.com</li>
+                    <li>🚇 Métro Exemple</li>
+                    <li style="margin-top: var(--space-sm);">
+                        <small>Ouvert du mardi au dimanche</small>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2024 La Boulangerie du Quai — Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <!-- Modale Produit -->
+    <div class="produit-modal" id="produitModal">
+        <div class="modal-content">
+            <div class="modal-close" onclick="closeProduitModal()">×</div>
+            <img id="modalImage" src="" alt="" class="modal-image">
+            <div class="modal-details">
+                <h3 id="modalTitle"></h3>
+                <div class="modal-price" id="modalPrice"></div>
+                
+                <div class="modal-story">
+                    <h4>L'Histoire du Goût</h4>
+                    <p id="modalStory"></p>
+                </div>
+                
+                <div class="modal-pairing">
+                    <h4>L'Accord Parfait</h4>
+                    <p id="modalPairing"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale Galerie -->
+    <div class="galerie-modal" id="galerieModal">
+        <div class="galerie-modal-content">
+            <div class="galerie-modal-close" onclick="closeGalerieModal()">×</div>
+            <img id="galerieModalImage" src="" alt="">
+        </div>
+    </div>
+
+    <!-- Modale Menu Complet -->
+    <div class="menu-modal" id="menuModal">
+        <div class="menu-modal-content">
+            <div class="menu-modal-close" onclick="closeMenuModal()">×</div>
+            <div class="menu-modal-header">
+                <h2>Menu Complet</h2>
+                <p class="section-subtitle">Toute notre gamme de produits</p>
+            </div>
+            
+            <div class="categories-menu">
+                <!-- Catégorie Salé -->
+                <div class="categorie-card">
+                    <h3>Le Salé</h3>
+                    <ul class="produits-list">
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Pain Campagne</span>
+                            <span class="produit-prix-menu">7,50 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Pain aux Noix</span>
+                            <span class="produit-prix-menu">8,90 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Pain de Seigle</span>
+                            <span class="produit-prix-menu">6,80 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Baguette Tradition</span>
+                            <span class="produit-prix-menu">1,20 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Fougasse aux Olives</span>
+                            <span class="produit-prix-menu">4,50 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Pizza Artisanale</span>
+                            <span class="produit-prix-menu">12,50 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Quiche Lorraine</span>
+                            <span class="produit-prix-menu">5,80 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Sandwich Poulet</span>
+                            <span class="produit-prix-menu">6,90 €</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Catégorie Sucré -->
+                <div class="categorie-card">
+                    <h3>Le Sucré</h3>
+                    <ul class="produits-list">
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Croissant au Beurre</span>
+                            <span class="produit-prix-menu">2,80 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Pain au Chocolat</span>
+                            <span class="produit-prix-menu">3,20 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Cornes de Gazelle</span>
+                            <span class="produit-prix-menu">3,80 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Éclair au Chocolat</span>
+                            <span class="produit-prix-menu">4,20 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Tarte aux Pommes</span>
+                            <span class="produit-prix-menu">4,80 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Mille-feuille</span>
+                            <span class="produit-prix-menu">5,50 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Macarons (x6)</span>
+                            <span class="produit-prix-menu">9,90 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Baklava</span>
+                            <span class="produit-prix-menu">3,50 €</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Catégorie Épicerie -->
+                <div class="categorie-card">
+                    <h3>L'Épicerie</h3>
+                    <ul class="produits-list">
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Miel de Thym</span>
+                            <span class="produit-prix-menu">14,50 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Confiture Abricot</span>
+                            <span class="produit-prix-menu">6,50 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Ras el Hanout</span>
+                            <span class="produit-prix-menu">8,90 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Huile d'Olive Vierge</span>
+                            <span class="produit-prix-menu">12,80 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Café Moulu Éthiopie</span>
+                            <span class="produit-prix-menu">9,90 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Thé à la Menthe</span>
+                            <span class="produit-prix-menu">7,50 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Amandes Grillées</span>
+                            <span class="produit-prix-menu">5,90 €</span>
+                        </li>
+                        <li class="produit-menu-item">
+                            <span class="produit-nom">Sel de Guérande</span>
+                            <span class="produit-prix-menu">4,20 €</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+<div class="bandeau-client" style="background:#222;color:#fff;font:14px/1.4 system-ui,sans-serif;text-align:center;padding:10px 16px">Site réalisé pour un client, en binôme. Nom, coordonnées et images du client ont été remplacés.</div>
+</body>
+</html>

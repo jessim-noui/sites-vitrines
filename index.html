@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sites vitrines</title>
+<meta name="description" content="Cinq sites vitrines réalisés pour des clients, en binôme : traiteur, boulangerie, restaurant, galerie d'art, agence web.">
+<style>
+  :root { --fond: #f7f3ec; --texte: #2a2420; --doux: #6d625a; --carte: #fffdf9; --trait: #e4dbcf; --accent: #9a4a1c; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--fond); color: var(--texte); font: 17px/1.55 Georgia, "Times New Roman", serif; }
+  header { max-width: 1080px; margin: 0 auto; padding: 56px 16px 24px; }
+  h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 8px; font-weight: 600; }
+  header p { color: var(--doux); margin: 0; max-width: 60ch; }
+  main { max-width: 1080px; margin: 0 auto; padding: 8px 16px 56px; display: grid; gap: 24px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+  a.site { display: block; background: var(--carte); border: 1px solid var(--trait); border-radius: 10px; overflow: hidden; color: inherit; text-decoration: none; transition: transform .2s, box-shadow .2s; }
+  a.site:hover, a.site:focus-visible { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(60, 40, 20, .12); outline: none; }
+  a.site img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-bottom: 1px solid var(--trait); background: var(--trait); }
+  .texte { padding: 14px 18px 18px; }
+  h2 { font-size: 1.25rem; margin: 0 0 4px; }
+  .texte p { margin: 0; color: var(--doux); font-size: .95rem; }
+  .bandeau-client { background: #222; color: #fff; font: 14px/1.4 system-ui, sans-serif; text-align: center; padding: 10px 16px; }
+  @media (prefers-reduced-motion: reduce) { a.site { transition: none; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Sites vitrines</h1>
+  <p>Cinq sites réalisés pour des clients, en binôme, en HTML, CSS et JavaScript. Ils n'ont jamais été mis en ligne : ils sont publiés ici comme exemples, avec un nom inventé.</p>
+</header>
+<main>
+  <a class="site" href="traiteur-de-la-vallee/"><img src="captures/traiteur-de-la-vallee.png" alt="Page d'accueil du Traiteur de la Vallée" loading="lazy"><div class="texte"><h2>Le Traiteur de la Vallée</h2><p>Traiteur pour mariages et réceptions, entre cuisine française et saveurs orientales.</p></div></a>
+  <a class="site" href="boulangerie-du-quai/"><img src="captures/boulangerie-du-quai.png" alt="Page d'accueil de La Boulangerie du Quai" loading="lazy"><div class="texte"><h2>La Boulangerie du Quai</h2><p>Boulangerie artisanale : pains au levain, pâtisseries et douceurs orientales.</p></div></a>
+  <a class="site" href="jardin-des-epices/"><img src="captures/jardin-des-epices.png" alt="Page d'accueil du Jardin des Épices" loading="lazy"><div class="texte"><h2>Le Jardin des Épices</h2><p>Restaurant indien : la carte, l'ambiance et la réservation.</p></div></a>
+  <a class="site" href="atelier-lumen/"><img src="captures/atelier-lumen.png" alt="Page d'accueil de l'Atelier Lumen" loading="lazy"><div class="texte"><h2>Atelier Lumen</h2><p>Galerie d'une artiste : les œuvres s'ouvrent en grand, avec leur fiche.</p></div></a>
+  <a class="site" href="agence-horizon/"><img src="captures/agence-horizon.png" alt="Page d'accueil de l'Agence Horizon" loading="lazy"><div class="texte"><h2>Agence Horizon</h2><p>Agence web : services, réalisations et contact.</p></div></a>
+</main>
+<div class="bandeau-client">Site réalisé pour un client, en binôme. Nom, coordonnées et images du client ont été remplacés.</div>
+</body>
+</html>

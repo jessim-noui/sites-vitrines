@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Jardin des Épices - Expérience Culinaire</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- VARIABLES --- */
+        :root {
+            --color-primary: #b57d42;    /* Doré/Marron */
+            --color-primary-dark: #8c5e2e;
+            --color-bg-light: #f9f7f2;   /* Crème très clair */
+            --color-bg-dark: #2c241f;    /* Fond sombre section réservation */
+            --color-text-dark: #332b26;
+            --color-text-white: #ffffff;
+            
+            --font-script: 'Great Vibes', cursive;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Poppins', sans-serif;
+            
+            --transition: all 0.4s ease;
+        }
+
+        /* --- RESET --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--color-bg-light);
+            color: var(--color-text-dark);
+            font-family: var(--font-sans);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* --- TYPOGRAPHIE --- */
+        h1, h2, h3 { font-family: var(--font-serif); }
+        .text-accent { font-family: var(--font-script); color: var(--color-primary); }
+        
+        /* --- HEADER & NAV --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background-color: rgba(44, 36, 31, 0.95); /* Fond sombre au scroll */
+            padding: 10px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-logo {
+            font-family: var(--font-script);
+            color: #fff;
+            font-size: 2rem;
+            text-decoration: none;
+            position: absolute;
+            left: 40px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: var(--transition);
+        }
+
+        header.scrolled .nav-logo { opacity: 1; transform: translateX(0); }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background-color: var(--color-primary);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        nav a:hover::after { width: 80%; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 95vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: var(--font-script);
+            font-size: 7rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            animation: fadeInDown 1.2s ease;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            font-weight: 300;
+            animation: fadeInUp 1.2s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        .hero-btns {
+            opacity: 0;
+            animation: fadeInUp 1.2s ease 0.6s forwards;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: var(--transition);
+            display: inline-block;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: #fff;
+        }
+        .btn-primary:hover { background-color: var(--color-primary-dark); transform: translateY(-3px); }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+        }
+        .btn-outline:hover { background-color: #fff; color: var(--color-text-dark); transform: translateY(-3px); }
+
+        /* VAGUE */
+        .wave-separator {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            z-index: 2;
+        }
+        .wave-fill { fill: var(--color-bg-light); }
+
+        /* --- SECTIONS GÉNÉRALES --- */
+        .section-padding { padding: 100px 20px; }
+        .section-header { text-align: center; margin-bottom: 70px; }
+        
+        .sub-title {
+            font-family: var(--font-script);
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            display: block;
+            margin-bottom: -10px;
+        }
+        
+        .main-title {
+            font-size: 3rem;
+            color: var(--color-text-dark);
+        }
+
+        /* --- MENU (BEIGE) --- */
+        .menu-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .menu-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .menu-img-card {
+            height: 250px;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .menu-img-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .menu-img-card:hover img { transform: scale(1.1); }
+        .menu-img-card.large { grid-column: span 2; height: 300px; }
+
+        .menu-list {
+            background: #fff;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        /* Petite bordure décorative */
+        .menu-list::before {
+            content: '';
+            position: absolute;
+            top: 10px; left: 10px; right: 10px; bottom: 10px;
+            border: 1px solid var(--color-primary);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .menu-category h3 {
+            font-size: 1.6rem;
+            color: var(--color-primary);
+            margin-bottom: 25px;
+            text-align: center;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 18px;
+        }
+
+        .item-name { font-weight: 600; font-family: var(--font-serif); font-size: 1.1rem; }
+        .item-dots { flex-grow: 1; border-bottom: 1px dotted #ccc; margin: 0 10px; }
+        .item-price { color: var(--color-primary); font-weight: 700; }
+
+        /* --- PARALLAX BREAK (Visual Split) --- */
+        .parallax-break {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=2000') center/cover fixed;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin: 80px 0;
+        }
+
+        .parallax-content h2 {
+            font-family: var(--font-script);
+            font-size: 4rem;
+            color: var(--color-primary);
+        }
+        .parallax-content p { font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; }
+
+        /* --- NOTRE HISTOIRE (SECTION CHEF) --- */
+        .story-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            padding: 0 20px 100px;
+        }
+
+        .story-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .story-content p { color: #666; margin-bottom: 20px; font-size: 1.05rem; }
+        
+        .signature {
+            font-family: var(--font-script);
+            font-size: 2rem;
+            color: var(--color-primary);
+            margin-top: 30px;
+        }
+
+        .story-img-wrapper {
+            position: relative;
+        }
+
+        .story-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 20px 20px 0 var(--color-primary); /* Cadre décalé style TM2 */
+        }
+
+        /* --- RÉSERVATION (FOND SOMBRE - RUPTURE) --- */
+        .reservation-section {
+            background-color: var(--color-bg-dark); /* Le fond sombre demandé */
+            color: #fff;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .reservation-section .sub-title { color: var(--color-primary); }
+        .reservation-section .main-title { color: #fff; }
+
+        .reservation-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.05); /* Légère transparence */
+            padding: 50px;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--color-primary);
+        }
+
+        .form-control {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding: 10px 0;
+            color: #fff;
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--color-primary);
+        }
+        
+        /* Styliser les options select pour qu'elles soient lisibles sur fond sombre */
+        select.form-control option { background-color: var(--color-bg-dark); }
+
+        .btn-submit {
+            background-color: var(--color-primary);
+            color: #fff;
+            border: none;
+            padding: 15px 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+
+        .btn-submit:hover { background-color: #fff; color: var(--color-bg-dark); }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #1a1512; /* Encore plus sombre que la résa */
+            color: #888;
+            padding: 80px 20px 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: var(--font-script);
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .social-links { margin: 30px 0; }
+        .social-links a {
+            color: #fff;
+            font-size: 1.2rem;
+            margin: 0 15px;
+            transition: var(--transition);
+        }
+        .social-links a:hover { color: var(--color-primary); }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* --- ANIMATIONS SCROLL --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease;
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 4rem; }
+            .menu-wrapper, .story-section { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .story-img-wrapper { order: -1; margin-bottom: 40px; }
+            .story-img { height: 350px; }
+            nav { display: none; } /* Pour simplifier sans JS complexe de menu burger */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="nav-logo">Le Jardin des Épices</a>
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#menu">Le Menu</a>
+            <a href="#histoire">Notre Histoire</a>
+            <a href="#reservation">Réserver</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="accueil">
+        <h1>Le Jardin des Épices</h1>
+        <p>L'excellence de la cuisine indienne</p>
+        <div class="hero-btns">
+            <a href="#menu" class="btn btn-primary">Voir la Carte</a>
+            <a href="#reservation" class="btn btn-outline">Réserver une Table</a>
+        </div>
+
+        <div class="wave-separator">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path class="wave-fill" d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section class="section-padding reveal" id="menu">
+        <div class="section-header">
+            <span class="sub-title">Saveurs d'Orient</span>
+            <h2 class="main-title">Notre Menu Signature</h2>
+        </div>
+
+        <div class="menu-wrapper">
+            <div class="menu-images">
+                <div class="menu-img-card large">
+                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&q=80&w=1000" alt="Curry Indien Royal">
+                </div>
+                <div class="menu-img-card">
+                    <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&q=80&w=500" alt="Naan">
+                </div>
+                <div class="menu-img-card">
+                    <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&q=80&w=500" alt="Epices">
+                </div>
+            </div>
+
+            <div class="menu-list">
+                <div class="menu-category">
+                    <h3>Les Incontournables</h3>
+                    <div class="menu-item">
+                        <span class="item-name">Poulet Tikka Masala</span>
+                        <div class="item-dots"></div>
+                        <span class="item-price">16€</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Agneau Rogan Josh</span>
+                        <div class="item-dots"></div>
+                        <span class="item-price">18€</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Palak Paneer</span>
+                        <div class="item-dots"></div>
+                        <span class="item-price">14€</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Biryani Légumes</span>
+                        <div class="item-dots"></div>
+                        <span class="item-price">15€</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Butter Chicken</span>
+                        <div class="item-dots"></div>
+                        <span class="item-price">17€</span>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="#" style="color: var(--color-primary); text-decoration: none; border-bottom: 1px solid;">Voir toute la carte</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="parallax-break reveal">
+        <div class="parallax-content">
+            <h2>L'Art des Épices</h2>
+            <p>Une symphonie de goûts et de couleurs</p>
+        </div>
+    </div>
+
+    <section class="section-padding reveal" id="histoire">
+        <div class="story-section">
+            <div class="story-content">
+                <span class="sub-title">Tradition & Passion</span>
+                <h2>Le goût authentique de l'Inde</h2>
+                <p>Depuis plus de 20 ans, notre chef met tout son cœur à recréer les recettes ancestrales du Nord de l'Inde. Chaque plat est préparé à la minute, utilisant des épices torréfiées sur place pour garantir une explosion de saveurs.</p>
+                <p>Nous ne servons pas simplement de la nourriture, nous partageons une part de notre culture, une invitation au voyage sans quitter votre chaise.</p>
+                <div class="signature">Le chef</div>
+            </div>
+            
+            <div class="story-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&q=80&w=800" alt="Chef cuisinant" class="story-img">
+            </div>
+        </div>
+    </section>
+
+    <section class="reservation-section reveal" id="reservation">
+        <div class="section-header">
+            <span class="sub-title">Rejoignez-nous</span>
+            <h2 class="main-title">Réserver votre Table</h2>
+        </div>
+
+        <div class="reservation-container">
+            <form>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Heure</label>
+                        <select class="form-control">
+                            <option>19:00</option>
+                            <option>19:30</option>
+                            <option>20:00</option>
+                            <option>20:30</option>
+                            <option>21:00</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nom</label>
+                        <input type="text" class="form-control" placeholder="Votre nom">
+                    </div>
+                    <div class="form-group">
+                        <label>Personnes</label>
+                        <select class="form-control">
+                            <option>2 Invités</option>
+                            <option>3 Invités</option>
+                            <option>4 Invités</option>
+                            <option>5+ Invités</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="button" class="btn-submit">Confirmer la réservation</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <span class="footer-logo">Le Jardin des Épices</span>
+        <p>1 rue de l'Exemple, 00000 Ville Exemple</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tripadvisor"></i></a>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Le Jardin des Épices. Tous droits réservés.
+        </div>
+    </footer>
+
+    <script>
+        // Animation au scroll (Reveal)
+        window.addEventListener('scroll', reveal);
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for(var i = 0; i < reveals.length; i++){
+                var windowHeight = window.innerHeight;
+                var revealTop = reveals[i].getBoundingClientRect().top;
+                var revealPoint = 150;
+                if(revealTop < windowHeight - revealPoint){
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        reveal(); // Init
+
+        // Navbar Change Background
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+<div class="bandeau-client" style="background:#222;color:#fff;font:14px/1.4 system-ui,sans-serif;text-align:center;padding:10px 16px">Site réalisé pour un client, en binôme. Nom, coordonnées et images du client ont été remplacés.</div>
+</body>
+</html>

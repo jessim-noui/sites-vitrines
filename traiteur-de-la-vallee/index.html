@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>Le Traiteur de la Vallée | Traiteur d'Excellence & Prestige</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+
+    <div class="pattern-bg"></div>
+
+    <div id="splash">
+        <div class="splash-logo">
+            <h1>Le Traiteur de la Vallée</h1>
+            <p class="splash-subtitle">L'EXCELLENCE GASTRONOMIQUE</p>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <a href="#" class="logo-container">
+            <div class="nav-logo">
+                <img src="img/logo.svg" alt="Le Traiteur de la Vallée" class="logo-img" id="nav-logo-img">
+            </div>
+            <span class="logo-text">Le Traiteur de la Vallée</span>
+        </a>
+        
+        <button class="nav-toggle" aria-label="Menu navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <ul class="nav-links">
+            <li><a href="#expertise">À propos de nous</a></li> 
+            <li><a href="#cuisine">Cuisine</a></li>
+            <li><a href="#creations">Créations</a></li>
+            <li><a href="#devis" class="nav-devis">DEVIS</a></li>
+        </ul>
+    </nav>
+
+    <!-- Le reste du contenu HTML reste identique -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-subtitle">Traiteur de Prestige</span>
+            <h1>L'Art de Recevoir</h1>
+            <div class="hero-buttons">
+                <a href="#creations" class="btn btn-explore">Explorer</a>
+                <a href="#devis" class="btn btn-devis-hero">Demander un Devis</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="histoire" class="section section-white histoire-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-img reveal">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200" alt="Savoir-faire">
+                </div>
+                <div class="story-text reveal">
+                    <div class="gold-line"></div>
+                    <h2 class="section-title">Héritage & Passion</h2>
+                    <p class="text-content">
+                        Depuis sa création, Le Traiteur de la Vallée incarne l'alliance parfaite entre la rigueur de la gastronomie française et la générosité des saveurs orientales.
+                    </p>
+                    <p class="text-content">
+                        Chaque réception est pour nous une œuvre d'art unique. Nous sélectionnons les produits les plus nobles pour créer des expériences sensorielles inoubliables.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise" class="section section-beige expertise-section">
+        <div class="container">
+            <div class="expertise-header reveal">
+                <h2>Nos Domaines d'Excellence</h2>
+                <p>Une signature unique pour chaque instant</p>
+            </div>
+            
+            <div class="expertise-items">
+                <div class="expertise-card reveal">
+                    <div class="expertise-img">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200" alt="Mariages">
+                    </div>
+                    <div class="expertise-content">
+                        <h3>Mariages</h3>
+                        <p>Une scénographie culinaire unique pour célébrer votre union.</p>
+                    </div>
+                </div>
+                
+                <div class="expertise-card reveal">
+                    <div class="expertise-img">
+                        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200" alt="Prestige">
+                    </div>
+                    <div class="expertise-content">
+                        <h3>Entreprise</h3>
+                        <p>Cocktails dînatoires et dîners de gala sur-mesure.</p>
+                    </div>
+                </div>
+                
+                <div class="expertise-card reveal">
+                    <div class="expertise-img">
+                        <img src="https://images.unsplash.com/photo-1530103043960-ef38714abb15?auto=format&fit=crop&w=1200" alt="Buffets">
+                    </div>
+                    <div class="expertise-content">
+                        <h3>Évènements</h3>
+                        <p>Une profusion de saveurs authentiques.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cuisine" class="section section-white section-cuisine-wrapper">
+        <div class="container-fluid">
+            
+            <div class="section-header-center reveal">
+                <h2>Cuisine & Inspiration</h2>
+                <p>Sélectionnez une catégorie pour découvrir nos suggestions</p>
+            </div>
+
+            <div class="cuisine-frame reveal">
+                
+                <div class="season-pillar" onclick="expandSeason(this)">
+                    <div class="season-bg" style="background-image: url('https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&q=80&w=1470');"></div>
+                    <div class="season-overlay"></div>
+                    <div class="season-title">
+                        <p>RECOMMANDATION</p>
+                        <h2>Mariage</h2>
+                    </div>
+                    <div class="back-btn"><i class="fas fa-arrow-left"></i> Retour</div>
+                    <div class="dishes-reveal">
+                        <div class="dish-item">
+                            <div class="dish-img-container"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600"></div>
+                            <h4>Buffet Royal</h4>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-img-container"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600"></div>
+                            <h4>Menu Dégustation</h4>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-img-container"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=600"></div>
+                            <h4>Pièce Montée</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="season-pillar" onclick="expandSeason(this)">
+                    <div class="season-bg" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=1470');"></div>
+                    <div class="season-overlay"></div>
+                    <div class="season-title">
+                        <p>RECOMMANDATION</p>
+                        <h2>Entreprise</h2>
+                    </div>
+                    <div class="back-btn"><i class="fas fa-arrow-left"></i> Retour</div>
+                    <div class="dishes-reveal">
+                        <div class="dish-item"><div class="dish-img-container"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=600"></div><h4>Cocktail Standing</h4></div>
+                        <div class="dish-item"><div class="dish-img-container"><img src="https://images.unsplash.com/photo-1563379091339-03246963d9d6?auto=format&fit=crop&w=600"></div><h4>Buffet Froid</h4></div>
+                        <div class="dish-item"><div class="dish-img-container"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=600"></div><h4>Plateaux Business</h4></div>
+                    </div>
+                </div>
+
+                <div class="season-pillar" onclick="expandSeason(this)">
+                    <div class="season-bg" style="background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=1470');"></div>
+                    <div class="season-overlay"></div>
+                    <div class="season-title">
+                        <p>RECOMMANDATION</p>
+                        <h2>Événement</h2>
+                    </div>
+                    <div class="back-btn"><i class="fas fa-arrow-left"></i> Retour</div>
+                    <div class="dishes-reveal">
+                        <div class="dish-item"><div class="dish-img-container"><img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=600"></div><h4>Barbecue Chic</h4></div>
+                        <div class="dish-item"><div class="dish-img-container"><img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=600"></div><h4>Dîner Intime</h4></div>
+                        <div class="dish-item"><div class="dish-img-container"><img src="https://images.unsplash.com/photo-1509460913899-515f1df34fea?auto=format&fit=crop&w=600"></div><h4>Garden Party</h4></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="creations" class="section section-beige creations-section">
+        <div class="container">
+            <div class="creations-header reveal">
+                <h2>Nos Créations</h2>
+                <p>Galerie de nos réalisations prestigieuses</p>
+            </div>
+            
+            <div class="creations-grid">
+                <div class="creation-card big-card reveal" data-image="img/photo.svg">
+                    <img src="img/photo.svg" alt="Création Mariage">
+                    <div class="creation-overlay">
+                        <h4>Mariage Château</h4>
+                        <button class="view-btn">Agrandir</button>
+                    </div>
+                </div>
+                
+                <div class="creation-card reveal" data-image="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=1600">
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=1200" alt="Soirée Corporate">
+                    <div class="creation-overlay">
+                        <h4>Soirée Corporate</h4>
+                        <button class="view-btn">Agrandir</button>
+                    </div>
+                </div>
+                
+                <div class="creation-card reveal" data-image="https://images.unsplash.com/photo-1563379091339-03246963d9d6?auto=format&fit=crop&w=1600">
+                    <img src="https://images.unsplash.com/photo-1563379091339-03246963d9d6?auto=format&fit=crop&w=1200" alt="Anniversaire">
+                    <div class="creation-overlay">
+                        <h4>Anniversaire Prestige</h4>
+                        <button class="view-btn">Agrandir</button>
+                    </div>
+                </div>
+                 
+                 <div class="creation-card reveal" data-image="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1600">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200" alt="Lancement">
+                    <div class="creation-overlay">
+                        <h4>Lancement Produit</h4>
+                        <button class="view-btn">Agrandir</button>
+                    </div>
+                </div>
+
+                <div class="creation-card reveal" data-image="https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?auto=format&fit=crop&w=1600">
+                    <img src="https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?auto=format&fit=crop&w=1200" alt="Buffet Fruits">
+                    <div class="creation-overlay">
+                        <h4>Fraîcheur d'Été</h4>
+                        <button class="view-btn">Agrandir</button>
+                    </div>
+                </div>
+
+                <div class="creation-card reveal" data-image="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1600">
+                    <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1200" alt="Service Traiteur">
+                    <div class="creation-overlay">
+                        <h4>Service à Table</h4>
+                        <button class="view-btn">Agrandir</button>
+                    </div>
+                </div>
+
+                <div class="creation-card reveal" data-image="https://images.unsplash.com/photo-1505935428862-770b6f24f629?auto=format&fit=crop&w=1600">
+                    <img src="https://images.unsplash.com/photo-1505935428862-770b6f24f629?auto=format&fit=crop&w=1200" alt="Art de la Table">
+                    <div class="creation-overlay">
+                        <h4>Art de la Table</h4>
+                        <button class="view-btn">Agrandir</button>
+                    </div>
+                </div>
+
+                <div class="creation-card reveal" data-image="https://images.unsplash.com/photo-1529312266912-b33cf6227e24?auto=format&fit=crop&w=1600">
+                    <img src="https://images.unsplash.com/photo-1529312266912-b33cf6227e24?auto=format&fit=crop&w=1200" alt="Buffet Dessert">
+                    <div class="creation-overlay">
+                        <h4>Douceurs Sucrées</h4>
+                        <button class="view-btn">Agrandir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="devis" class="devis-section section-white">
+        <div class="container">
+            <div class="devis-title-section reveal">
+                <h2>Devis Personnalisé</h2>
+                <p>Concevons ensemble votre événement unique</p>
+            </div>
+            
+            <div class="devis-container reveal">
+                <div class="devis-info">
+                    <h3>Concevons votre événement</h3>
+                    <p>
+                        Partagez avec nous votre vision, et nous la transformerons en une réalité gastronomique mémorable.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item"><i class="fas fa-phone"></i><span>01 23 45 67 89</span></div>
+                        <div class="contact-item"><i class="fas fa-envelope"></i><span>contact@example.com</span></div>
+                        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>1 rue de l'Exemple, 00000 Ville Exemple</span></div>
+                    </div>
+                </div>
+                
+                <form class="form-devis" id="devis-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nom complet *</label>
+                            <input type="text" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" placeholder="votre@email.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Téléphone *</label>
+                            <input type="tel" placeholder="01 23 45 67 89" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Type d'événement *</label>
+                            <select required>
+                                <option value="" disabled selected>Sélectionnez</option>
+                                <option>Mariage</option>
+                                <option>Entreprise</option>
+                                <option>Anniversaire</option>
+                                <option>Autre</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nombre d'invités *</label>
+                            <input type="number" placeholder="Ex: 120" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Date de l'événement *</label>
+                            <input type="date" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Message & Détails (Heure, Lieu, Préférences...) *</label>
+                        <textarea placeholder="Merci d'indiquer le lieu, l'horaire approximatif et vos souhaits culinaires spécifiques..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">ENVOYER LA DEMANDE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-main">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column align-left">
+                    <h3>Contact</h3>
+                    <div class="footer-contact">
+                        <div class="footer-contact-item"><i class="fas fa-phone"></i><span>01 23 45 67 89</span></div>
+                        <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>contact@example.com</span></div>
+                        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>1 rue de l'Exemple<br>00000 Ville Exemple</span></div>
+                    </div>
+                </div>
+                
+                <div class="footer-column align-left">
+                    <h3>Navigation</h3>
+                    <div class="footer-links">
+                        <a href="#expertise">À propos de nous</a>
+                        <a href="#cuisine">Cuisine</a>
+                        <a href="#creations">Créations</a>
+                        <a href="#devis">Devis & Contact</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column footer-logo-container">
+                    <img src="img/logo.svg" alt="Logo" class="logo-img footer-logo-img" id="footer-logo-img">
+                    <div class="footer-brand-text">
+                        <span>Le Traiteur de la Vallée</span>
+                        <p>Traiteur d'Excellence</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Le Traiteur de la Vallée. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox" style="display:none;">
+        <button class="lightbox-close">&times;</button>
+        <div class="lightbox-nav">
+            <button id="prev-btn">&larr;</button>
+            <button id="next-btn">&rarr;</button>
+        </div>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+        </div>
+    </div>
+
+    <script src="scrit.js"></script>
+<div class="bandeau-client" style="background:#222;color:#fff;font:14px/1.4 system-ui,sans-serif;text-align:center;padding:10px 16px">Site réalisé pour un client, en binôme. Nom, coordonnées et images du client ont été remplacés.</div>
+</body>
+</html>
